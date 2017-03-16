@@ -86,3 +86,13 @@ exercise 3.3
 >   empty = L empty
 >   insert kl f (L m) = L $ insert (toList kl) f m
 >   lookup kl (L m) = lookup (toList kl) m
+
+type BTree elem = Either () (Tree elem, Tree elem)
+
+What about other datatypes such as binary trees?
+
+I assume that this question means: Can you use other data structures, such as
+binary trees, as keys for Map instances?
+I think it should be possible. Every map would have to have exactly two children
+maps, as opposed to a natural number of children maps for lists, as we did
+above.
