@@ -54,3 +54,12 @@ exercise 1.1
 
 exercise 1.2
 ============
+
+> toList :: Sequ elem -> List elem
+> toList Nil = Zero
+> toList (OCons s) = flatten $ toList s
+> toList (ICons e s) = Succ e $ flatten $ toList s
+
+> flatten :: List (Pair elem) -> List elem
+> flatten Zero = Zero
+> flatten (Succ (a, b) n) = Succ a $ Succ b $ flatten n
