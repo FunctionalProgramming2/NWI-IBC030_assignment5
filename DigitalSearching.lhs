@@ -79,3 +79,10 @@ apparently a map of maps which I think was not obvious.
 
 exercise 3.3
 ============
+
+> data instance Map [key] val = L (Map (List key) val)
+
+> instance (Key key) => Key [key] where
+>   empty = L empty
+>   insert kl f (L m) = L $ insert (toList kl) f m
+>   lookup kl (L m) = lookup (toList kl) m
