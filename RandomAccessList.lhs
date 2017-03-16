@@ -34,5 +34,14 @@ author: Anna Tökés s1005628
 exercise 1.1
 ============
 
+> unary :: Bin -> Nat
+> unary N = Z
+> unary (O s) = double $ unary s
+> unary (I s) = S $ double $ unary s
+
+> double :: Nat -> Nat
+> double Z = Z
+> double (S n) = S $ S $ double n
+
 exercise 1.2
 ============
