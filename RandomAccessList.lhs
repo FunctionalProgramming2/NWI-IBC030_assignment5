@@ -43,5 +43,14 @@ exercise 1.1
 > double Z = Z
 > double (S n) = S $ S $ double n
 
+> binary :: Nat -> Bin
+> binary Z = N
+> binary (S x) = succBin $ binary x
+
+> succBin :: Bin -> Bin
+> succBin N = I $ N
+> succBin (O bs) = I $ bs
+> succBin (I bs) = O $ succBin bs
+
 exercise 1.2
 ============
