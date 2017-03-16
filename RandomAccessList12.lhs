@@ -11,3 +11,7 @@
 < head ∷ Sequ elem → elem
 < tail ∷ Sequ elem → Sequ elem
 < (!) ∷ Sequ elem → Integer → elem
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Anna Tökés s1005628

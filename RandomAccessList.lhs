@@ -22,3 +22,7 @@
 
 < toList ∷ Sequ elem → List elem
 < fromList ∷ List elem → Sequ elem
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Anna Tökés s1005628

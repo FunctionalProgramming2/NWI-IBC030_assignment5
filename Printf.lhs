@@ -33,3 +33,7 @@ printf ("I am " & D & " years old.") 51
 printf ("I am " & D & " " & S & " old.") 1 "year"
 fmt = "Color " & S & ", Number " & D & ", Float " & F
 printf fmt "purple" 4711 3.1415
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Anna Tökés s1005628

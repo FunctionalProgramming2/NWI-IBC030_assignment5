@@ -41,3 +41,7 @@
 < data instance Map [key] val =
 <
 < instance (Key key) ⇒ Key [key] where
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Anna Tökés s1005628
