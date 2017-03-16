@@ -63,3 +63,12 @@ exercise 1.2
 > flatten :: List (Pair elem) -> List elem
 > flatten Zero = Zero
 > flatten (Succ (a, b) n) = Succ a $ Succ b $ flatten n
+
+> fromList :: List elem -> Sequ elem
+> fromList Zero = Nil
+> fromList (Succ elem list) = addSequ elem $ fromList list
+
+> addSequ :: elem -> Sequ elem -> Sequ elem
+> addSequ e Nil = ICons e Nil
+> addSequ e (OCons s) = ICons e s
+> addSequ e (ICons elem s) = OCons $ addSequ (e, elem) s
