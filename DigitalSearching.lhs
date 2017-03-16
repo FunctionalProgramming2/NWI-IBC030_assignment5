@@ -6,6 +6,7 @@
 > module DigitalSearching
 > where
 > import Prelude hiding (lookup)
+> import Data.Maybe
 > -- import Unicode
 
 > data family Map key ∷ * → *
@@ -60,6 +61,21 @@ exercise 3.1
 
 exercise 3.2
 ============
+
+I though that this was a pair of maps from the exercise description but it is
+apparently a map of maps which I think was not obvious.
+
+> data instance Map (key1, key2) val = P (Map key1 (Map key2 val))
+
+> instance (Key key1, Key key2) => Key (key1, key2) where
+>   empty = P empty
+>   insert (k1, k2) f (P m) = P $ insert k1 (pins k2 f) m
+>   lookup (k1, k2) (P m) = lookup k1 m >>= lookup k2
+
+> pins :: (Key key)
+>   => key -> (Maybe val -> val) -> (Maybe (Map key val)) -> (Map key val)
+> pins k f Nothing = insert k f empty
+> pins k f (Just m) = insert k f m
 
 exercise 3.3
 ============
