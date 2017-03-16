@@ -49,6 +49,15 @@ author: Anna Tökés s1005628
 exercise 3.1
 ============
 
+> data instance Map (Either key1 key2) val = E (Map key1 val) (Map key2 val)
+
+> instance (Key key1, Key key2) => Key (Either key1 key2) where
+>   empty = E empty empty
+>   insert (Left k) f (E m1 m2) = E (insert k f m1) m2
+>   insert (Right k) f (E m1 m2) = E m1 (insert k f m2)
+>   lookup (Left k) (E m1 m2) = lookup k m1
+>   lookup (Right k) (E m1 m2) = lookup k m2
+
 exercise 3.2
 ============
 
