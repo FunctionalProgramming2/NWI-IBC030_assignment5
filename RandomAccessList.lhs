@@ -5,10 +5,13 @@
 > -- import Unicode
 
 > data Nat = Z | S Nat
+>   deriving(Show)
 
 > data List elem = Zero | Succ elem (List elem)
+>   deriving(Show)
 
 > data Bin = N | O Bin | I Bin
+>   deriving(Show)
 
 > type Pair elem = (elem, elem)
 
@@ -16,6 +19,7 @@
 >   = Nil
 >   | OCons (Sequ (Pair elem))
 >   | ICons elem (Sequ (Pair elem))
+>   deriving(Show)
 
 < unary ∷ Bin → Nat
 < binary ∷ Nat → Bin
